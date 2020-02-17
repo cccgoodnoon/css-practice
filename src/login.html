@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>login</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0; 
+            background: #333;
+        }
+        .login-box{
+            position: absolute;
+
+            top: 0;   /* 可不加吧？ */
+            /* left: 0;  */    
+            left: -100%;
+            /* 要加 为了变换 */
+
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(
+                45deg,
+                #9fbaa8,
+                #31354c
+            );
+            transition: 0.5s;
+        }
+        .show{
+            left: 0;
+        }
+        .login-form{
+            /* display: flex;
+            justify-content: center;
+            align-items: center;  */
+            /*为什么在这里没用？ */
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);  
+            /*这四行作用居中  第四行作用是使该选择器的中点为移动点*/
+			
+            text-align: center;
+
+        }
+        .login-form h1{
+            font-weight: 400;
+			margin-top: 0;
+            color: white;
+        }
+        .txtb{
+            display: block;   /*使两个txtb外边距margin合并*/
+            /* box-sizing: border-box; */
+            width: 240px;
+            background: #ffffff28;    /*背景透明*/
+            border: 1px solid white;
+            padding: 10px 0px;  /*urdl*/
+            color: white;
+            /* outline: none; */
+            margin: 10px 0;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .login-btn{
+            width: 240px;
+            padding: 10px ;
+			background: #2c3e50;
+            border: 0;
+            border-radius: 6px;
+			color: white;
+            cursor: pointer;
+        }
+        .hide-login-btn{
+            float: right;
+            opacity: .6;
+            margin: 40px;
+            font-size: 30px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+        .show-login-btn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);  
+            /* 四行居中 */
+            background: #333;
+            color: white;
+            border: 2px solid;
+            padding: 10px 20px;
+            cursor: pointer;
+            outline: none;
+            font-size: 18px;
+
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $(".show-login-btn").click(function(){
+                $(".login-box").toggleClass("show");
+            });
+        });
+        $(document).ready(function(){
+            $(".hide-login-btn").click(function(){
+                $(".login-box").toggleClass("show");
+            });
+        });        
+    </script>
+    
+</head>
+
+<body>
+    <button class="show-login-btn">
+        ->Show Login Form
+    </button>
+    <div class="login-box">
+        <div class="hide-login-btn">
+            +
+        </div>
+        <form class="login-form" action="index.html" method="POST">
+            <h1>Welcome</h1>
+            <input type="text" class="txtb" placeholder="Username">
+            <input type="password" class="txtb" placeholder="Password">
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
