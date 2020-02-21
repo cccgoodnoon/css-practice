@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />
+    <title>自适应布局导航栏</title>
+
+    <style>
+        *{
+            /* font-family: sans-serif; */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* 为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+            通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。 */
+        }
+        .services-section{
+            background-image: linear-gradient(
+                135deg,
+                #9fbaa8,
+                #31354c
+            );
+            /* background-size: cover; */
+            padding: 60px 0;
+        }
+        .inner{
+            overflow: hidden;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .section-title{
+            text-align: center;
+            /* 居中 */
+            /* text-transform: uppercase; */
+            color: #214064;
+            font-size: 30px;
+        }
+        .border{
+            width: 160px;
+            height: 2px;
+            background: #214064;
+            margin: 40px auto;
+            /* 居中 */
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .box{
+            width: 350px;
+            max-width: 33.33%;
+            padding: 10px;
+            text-align: center;
+            color: #71c9ce;
+            cursor: pointer;
+        }
+        .icon{
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border: 3px solid #71c9ce;
+            color: #71c9ce;
+            transform: rotate(45deg);
+            margin-top: 16px;
+            margin-bottom: 30px;
+			transition: 0.3s linear;
+
+        }
+        .icon i{
+            line-height: 65px;
+            transform: rotate(-45deg);
+            font-size: 26px;
+        }
+        .box:hover >.icon{
+            background: #71c9ce;
+            color: #ddd;
+        }
+        .title{
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: rgb(253, 253, 253);
+        }
+        .txtb{
+            font-size: 14px;
+        }
+
+        /* media query 响应式布局 */
+        @media screen and (max-width: 960px){
+            .box{
+                max-width: 45%;
+            }
+        }
+        /* 标准浏览器分辨率980px */
+        /* @media screen and (max-width: 768px){
+            .box{
+                max-width: 50%;
+            }
+        } */
+        @media screen and (max-width: 480px){
+            .box{
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="services-section">
+        <div class="inner">
+            <h1 class="section-title">豆瓣年度书单</h1>
+            <div class="border"></div>
+            <div class="container">
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="title">82年生的金智英</div>
+                    <div class="txtb">一个女孩要经历多少看不见的坎坷，才能跌跌撞撞地长大成人。</div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="title">你当像鸟飞往你的山</div>
+                    <div class="txtb"> 无论你成为谁，无论你把自己变成了什么，那就是你本来的样子。</div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="title">书店日记</div>
+                    <div class="txtb">别以为二手书商的世界是一曲田园牧歌。</div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="title">时间的秩序</div>
+                    <div class="txtb">比起我们平常模糊的视野，有时疯狂的视角看得更远。</div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="title">OPUS 作品</div>
+                    <div class="txtb">是谁，创造了神的世界？</div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="title">喜鹊谋杀案</div>
+                    <div class="txtb">一首神秘童谣，幻化成一曲夺命交响。</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
