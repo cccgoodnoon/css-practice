@@ -15,25 +15,28 @@
             /* 为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
             通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。 */
         }
-        .services-section{
+        body{
             background-image: linear-gradient(
                 135deg,
                 #9fbaa8,
                 #31354c
             );
-            /* background-size: cover; */
-            padding: 60px 0;
+            /* background-size: cover; 
+            cover与100%的差别在于：cover为图片不拉伸原尺寸扩大，100%为图片撑大 */
+            background-repeat:no-repeat;
+
         }
         .inner{
             overflow: hidden;
+            /* 表示如果内容超出容器大小，就把超出部分隐藏(相当于切掉) */
             width: 100%;
             max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
+            margin: auto;   /* 让元素水平居中 */
+            padding: 60px 20px;
         }
         .section-title{
             text-align: center;
-            /* 居中 */
+            /* h1 h2 h3对齐方式 center left right */
             /* text-transform: uppercase; */
             color: #214064;
             font-size: 30px;
@@ -48,18 +51,26 @@
         .container{
             display: flex;
             flex-wrap: wrap;
+            /* flex布局中是否允许子元素换行 */
             justify-content: center;
+            /* 所有子元素水平居中 */
         }
         .box{
             width: 350px;
             max-width: 33.33%;
             padding: 10px;
             text-align: center;
+            /* 用该居中方法前提：选择器是父元素 */
             color: #71c9ce;
             cursor: pointer;
         }
         .icon{
             display: inline-block;
+            /* 该属性加上text-align 使icon居中 */
+            /* margin：0 auto；是设置块标签在父级中居中对齐，是一种对齐方式。
+            所以对于display：inline-block，设置margin：0 auto；
+            此时是其本身的行标签性质占上风（而行标签本身默认靠左对齐），所以并不起作用。
+            应该在其父级设置text-align：center来居中对齐。 */
             width: 70px;
             height: 70px;
             border: 3px solid #71c9ce;
@@ -108,55 +119,52 @@
     </style>
 </head>
 <body>
-    <div class="services-section">
-        <div class="inner">
-            <h1 class="section-title">豆瓣年度书单</h1>
-            <div class="border"></div>
-            <div class="container">
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="title">82年生的金智英</div>
-                    <div class="txtb">一个女孩要经历多少看不见的坎坷，才能跌跌撞撞地长大成人。</div>
+    <div class="inner">
+        <h1 class="section-title">豆瓣年度书单</h1>
+        <div class="border"></div>
+        <div class="container">
+            <div class="box">
+                <div class="icon">
+                    <i class="fas fa-paint-brush"></i>
                 </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="title">你当像鸟飞往你的山</div>
-                    <div class="txtb"> 无论你成为谁，无论你把自己变成了什么，那就是你本来的样子。</div>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="title">书店日记</div>
-                    <div class="txtb">别以为二手书商的世界是一曲田园牧歌。</div>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="title">时间的秩序</div>
-                    <div class="txtb">比起我们平常模糊的视野，有时疯狂的视角看得更远。</div>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="title">OPUS 作品</div>
-                    <div class="txtb">是谁，创造了神的世界？</div>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="title">喜鹊谋杀案</div>
-                    <div class="txtb">一首神秘童谣，幻化成一曲夺命交响。</div>
-                </div>
+                <div class="title">82年生的金智英</div>
+                <div class="txtb">一个女孩要经历多少看不见的坎坷，才能跌跌撞撞地长大成人。</div>
             </div>
-
+            <div class="box">
+                <div class="icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="title">你当像鸟飞往你的山</div>
+                <div class="txtb"> 无论你成为谁，无论你把自己变成了什么，那就是你本来的样子。</div>
+            </div>
+            <div class="box">
+                <div class="icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="title">书店日记</div>
+                <div class="txtb">别以为二手书商的世界是一曲田园牧歌。</div>
+            </div>
+            <div class="box">
+                <div class="icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="title">时间的秩序</div>
+                <div class="txtb">比起我们平常模糊的视野，有时疯狂的视角看得更远。</div>
+            </div>
+            <div class="box">
+                <div class="icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="title">OPUS 作品</div>
+                <div class="txtb">是谁，创造了神的世界？</div>
+            </div>
+            <div class="box">
+                <div class="icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="title">喜鹊谋杀案</div>
+                <div class="txtb">一首神秘童谣，幻化成一曲夺命交响。</div>
+            </div>
         </div>
     </div>
 </body>
